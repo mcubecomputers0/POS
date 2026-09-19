@@ -53,12 +53,15 @@ function createWindow() {
     {
       label: 'View',
       submenu: [
+        { role: 'reload', accelerator: 'CmdOrCtrl+R' },
+        { role: 'forceReload', accelerator: 'CmdOrCtrl+Shift+R' },
+        { role: 'toggleDevTools', accelerator: 'F12' },
+        { type: 'separator' },
         { role: 'resetZoom' },
         { role: 'zoomIn' },
         { role: 'zoomOut' },
         { type: 'separator' },
         { role: 'togglefullscreen' },
-        ...(isDev ? [{ role: 'toggleDevTools' }] : []),
       ],
     },
     {
@@ -86,16 +89,30 @@ function createWindow() {
   const menu = Menu.buildFromTemplate(template);
   Menu.setApplicationMenu(menu);
 
-  // Load URL or built index.html
-  if (isDev && process.env.VITE_DEV_SERVER_URL) {
-    mainWindow.loadURL(process.env.VITE_DEV_SERVER_URL);
-  } else {
+  // Error listener with automatic fallback to built index.html
+  mainWindow.webContents.on('did-fail-load', (_event, errorCode, errorDescription, validatedURL) => {
+    console.error(`Page failed to load: ${validatedURL} (${errorCode}: ${errorDescription})`);
     const indexPath = path.join(__dirname, '../dist/index.html');
-    if (fs.existsSync(indexPath)) {
+    if (fs.existsSync(indexPath) && validatedURL.includes('5173')) {
+      console.log('Dev server not reachable. Loading built dist/index.html instead...');
       mainWindow.loadFile(indexPath);
-    } else {
-      mainWindow.loadURL('http://localhost:5173');
     }
+  });
+
+  // Load URL or built index.html
+  const indexPath = path.join(__dirname, '../dist/index.html');
+  const devUrl = process.env.VITE_DEV_SERVER_URL;
+
+  if (devUrl) {
+    mainWindow.loadURL(devUrl).catch(() => {
+      if (fs.existsSync(indexPath)) {
+        mainWindow.loadFile(indexPath);
+      }
+    });
+  } else if (fs.existsSync(indexPath)) {
+    mainWindow.loadFile(indexPath);
+  } else {
+    mainWindow.loadURL('http://localhost:5173').catch(() => {});
   }
 
   mainWindow.on('closed', () => {

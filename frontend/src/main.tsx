@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from 'react-hot-toast';
 import App from './App';
@@ -19,10 +19,19 @@ const queryClient = new QueryClient({
   },
 });
 
+// Use HashRouter for Electron and file:// protocol to avoid navigation breaking local file loading
+const isElectron =
+  typeof window !== 'undefined' &&
+  (window.location.protocol === 'file:' ||
+   Boolean((window as any).electronAPI) ||
+   navigator.userAgent.toLowerCase().includes('electron'));
+
+const RouterComponent = isElectron ? HashRouter : BrowserRouter;
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
+      <RouterComponent>
         <App />
         <Toaster
           position="top-right"
@@ -37,7 +46,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             error: { iconTheme: { primary: '#ef4444', secondary: 'white' } },
           }}
         />
-      </BrowserRouter>
+      </RouterComponent>
     </QueryClientProvider>
   </React.StrictMode>
 );
