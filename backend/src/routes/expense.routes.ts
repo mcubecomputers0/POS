@@ -1,0 +1,1 @@
+export { expenseRouter as default } from './_all_routes';
