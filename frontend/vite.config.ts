@@ -9,11 +9,11 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+      includeAssets: ['favicon.ico', 'favicon.png', 'apple-touch-icon.png', 'icon.png', 'splash.jpg'],
       manifest: {
-        name: 'வணிகம் (Vanigam)',
-        short_name: 'வணிகம்',
-        description: 'Multi-company GST billing, POS & inventory management',
+        name: 'வியாபாரம் (VIYABARAM CLOUD)',
+        short_name: 'வியாபாரம்',
+        description: 'GST Billing & Inventory Management Software by MCube Computers',
         theme_color: '#1a56db',
         background_color: '#0f172a',
         display: 'standalone',
@@ -21,6 +21,7 @@ export default defineConfig({
         icons: [
           { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' },
           { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' },
+          { src: 'icon.png', sizes: '1024x1024', type: 'image/png' },
         ],
         shortcuts: [
           { name: 'New Invoice', short_name: 'Invoice', description: 'Create a new GST invoice', url: '/pos', icons: [{ src: 'pwa-192x192.png', sizes: '192x192' }] },

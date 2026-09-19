@@ -14,8 +14,20 @@ export default function CompanySelectPage() {
   return (
     <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-bg)', padding: 'var(--space-4)' }}>
       <div style={{ width: '100%', maxWidth: 500 }}>
-        <div style={{ textAlign: 'center', marginBottom: 'var(--space-8)' }}>
-          <div style={{ width: 56, height: 56, background: 'linear-gradient(135deg, var(--brand-primary), var(--brand-secondary))', borderRadius: 'var(--radius-xl)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto var(--space-3)', fontSize: 24 }}>⚡</div>
+        <div style={{ textAlign: 'center', marginBottom: 'var(--space-6)' }}>
+          <img
+            src="./icon.png"
+            alt="வியாபாரம் (VIYABARAM CLOUD)"
+            style={{
+              width: 64,
+              height: 64,
+              borderRadius: 'var(--radius-xl)',
+              margin: '0 auto var(--space-3)',
+              boxShadow: '0 6px 20px rgba(26, 86, 219, 0.3)',
+              display: 'block',
+              objectFit: 'cover',
+            }}
+          />
           <h1 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700 }}>Select a Company</h1>
           <p style={{ color: 'var(--color-text-muted)', fontSize: 'var(--text-sm)', marginTop: 4 }}>Welcome back, {user?.name}</p>
         </div>
@@ -56,6 +68,18 @@ export default function CompanySelectPage() {
               <div style={{ fontSize: 'var(--text-xs)', marginTop: 2 }}>Create or join a new company</div>
             </div>
           </button>
+        </div>
+
+        {/* Software credits & license rights */}
+        <div style={{
+          textAlign: 'center',
+          marginTop: 'var(--space-6)',
+          fontSize: 'var(--text-xs)',
+          color: 'var(--color-text-dim)',
+          lineHeight: 1.6,
+        }}>
+          <div>Software Developed By: <strong style={{ color: 'var(--color-text)' }}>MCube Computers</strong></div>
+          <div>License Rights: <strong style={{ color: 'var(--color-text)' }}>MCube Computers</strong></div>
         </div>
       </div>
     </div>

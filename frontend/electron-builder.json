@@ -1,7 +1,7 @@
 {
-  "appId": "com.vanigam.pos",
-  "productName": "வணிகம் (Vanigam)",
-  "copyright": "Copyright © 2026 வணிகம் (Vanigam)",
+  "appId": "com.viyabaram.cloud",
+  "productName": "வியாபாரம் (VIYABARAM CLOUD)",
+  "copyright": "Copyright © 2026 MCube Computers. All Rights Reserved.",
   "directories": {
     "output": "release"
   },
@@ -28,6 +28,6 @@
     "allowToChangeInstallationDirectory": true,
     "createDesktopShortcut": true,
     "createStartMenuShortcut": true,
-    "shortcutName": "வணிகம் (Vanigam)"
+    "shortcutName": "வியாபாரம் (VIYABARAM CLOUD)"
   }
 }

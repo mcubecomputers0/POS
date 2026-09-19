@@ -1,6 +1,8 @@
+import React, { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useAuthStore } from './store';
 import AppLayout from './components/layout/AppLayout';
+import SplashScreen from './components/common/SplashScreen';
 import LoginPage from './pages/auth/LoginPage';
 import RegisterPage from './pages/auth/RegisterPage';
 import CompanySelectPage from './pages/auth/CompanySelectPage';
@@ -56,8 +58,19 @@ function SuperAdminRoute({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  const [showSplash, setShowSplash] = useState(() => {
+    return !sessionStorage.getItem('viyabaram_splash_dismissed');
+  });
+
+  const handleSplashFinish = () => {
+    sessionStorage.setItem('viyabaram_splash_dismissed', 'true');
+    setShowSplash(false);
+  };
+
   return (
-    <Routes>
+    <>
+      {showSplash && <SplashScreen onFinish={handleSplashFinish} />}
+      <Routes>
       {/* Auth Routes */}
       <Route path="/login" element={<AuthRoute><LoginPage /></AuthRoute>} />
       <Route path="/register" element={<AuthRoute><RegisterPage /></AuthRoute>} />
@@ -106,5 +119,6 @@ export default function App() {
         </PrivateRoute>
       } />
     </Routes>
+    </>
   );
 }

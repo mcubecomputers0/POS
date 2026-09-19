@@ -5,11 +5,12 @@ import {
   FileText, ShoppingBag, RotateCcw, CreditCard, Receipt,
   BarChart3, Settings, LogOut, Bell, ChevronDown,
   Menu, X, Building2, Shield, ClipboardList, FileSearch,
-  Wallet, ChevronRight, Zap, UserCheck, Warehouse, Tag, User, Layers, Palette
+  Wallet, ChevronRight, Zap, UserCheck, Warehouse, Tag, User, Layers, Palette, Sparkles
 } from 'lucide-react';
 import { useAuthStore, useUIStore } from '../../store';
 import { authApi } from '../../api';
 import toast from 'react-hot-toast';
+import SplashScreen from '../common/SplashScreen';
 
 const NAV_ITEMS = [
   {
@@ -83,6 +84,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [companyMenuOpen, setCompanyMenuOpen] = useState(false);
   const [notifOpen, setNotifOpen] = useState(false);
+  const [showAboutModal, setShowAboutModal] = useState(false);
   const userMenuRef = useRef<HTMLDivElement>(null);
 
   // Close dropdowns on outside click
@@ -119,11 +121,22 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       <aside className={`sidebar ${sidebarCollapsed ? 'collapsed' : ''}`}>
         {/* Logo */}
         <div className="sidebar-logo">
-          <div className="sidebar-logo-icon">⚡</div>
+          <img
+            src="./icon.png"
+            alt="வியாபாரம்"
+            style={{
+              width: 38,
+              height: 38,
+              borderRadius: 'var(--radius-lg)',
+              objectFit: 'cover',
+              boxShadow: 'var(--shadow-glow)',
+              flexShrink: 0,
+            }}
+          />
           {!sidebarCollapsed && (
             <div>
-              <div className="sidebar-logo-text">வணிகம் (Vanigam)</div>
-              <div style={{ fontSize: '10px', color: 'var(--color-text-dim)' }}>Billing & Inventory</div>
+              <div className="sidebar-logo-text" style={{ fontSize: '15px', lineHeight: 1.2 }}>வியாபாரம்</div>
+              <div style={{ fontSize: '10px', color: 'var(--brand-primary)', fontWeight: 600 }}>VIYABARAM CLOUD</div>
             </div>
           )}
         </div>
@@ -199,6 +212,21 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             </>
           )}
         </nav>
+
+        {/* Sidebar Footer Credits */}
+        {!sidebarCollapsed && (
+          <div style={{
+            padding: '10px 14px',
+            borderTop: '1px solid var(--color-border)',
+            background: 'var(--color-surface-2)',
+            fontSize: '10px',
+            color: 'var(--color-text-dim)',
+            lineHeight: 1.5,
+          }}>
+            <div>Developed By: <strong style={{ color: 'var(--color-text)' }}>MCube Computers</strong></div>
+            <div>License Rights: <strong style={{ color: 'var(--color-text-muted)' }}>MCube Computers</strong></div>
+          </div>
+        )}
       </aside>
 
       {/* Main Content */}
@@ -263,6 +291,13 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                 <Link to="/select-company" className="dropdown-item" onClick={() => setUserMenuOpen(false)}>
                   <Building2 size={14} /> Switch Company
                 </Link>
+                <button
+                  className="dropdown-item"
+                  style={{ width: '100%', border: 'none', background: 'none' }}
+                  onClick={() => { setUserMenuOpen(false); setShowAboutModal(true); }}
+                >
+                  <Sparkles size={14} style={{ color: 'var(--brand-primary)' }} /> About & Splash Screen
+                </button>
                 <div className="dropdown-divider" />
                 <button className="dropdown-item danger" style={{ width: '100%', border: 'none', background: 'none' }} onClick={handleLogout}>
                   <LogOut size={14} /> Sign Out
@@ -295,6 +330,10 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           ))}
         </div>
       </nav>
+
+      {showAboutModal && (
+        <SplashScreen isModal={true} onFinish={() => setShowAboutModal(false)} />
+      )}
     </div>
   );
 }

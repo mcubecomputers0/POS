@@ -1,23 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ta">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="theme-color" content="#1a56db" />
-    <meta name="description" content="வணிகம் (Vanigam) — Multi-company GST billing, POS & inventory management" />
-    <meta name="keywords" content="வணிகம், Vanigam, GST billing, POS, inventory management, India, GSTIN, invoice" />
-    <meta property="og:title" content="வணிகம் (Vanigam)" />
-    <meta property="og:description" content="Professional GST billing and inventory management" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="author" content="MCube Computers" />
+    <meta name="description" content="வியாபாரம் (VIYABARAM CLOUD) — GST Billing & Inventory Management Software. Software Developed By: MCube Computers. License Rights: MCube Computers." />
+    <meta name="keywords" content="வியாபாரம், VIYABARAM CLOUD, MCube Computers, GST billing, POS, inventory management, India, GSTIN, invoice" />
+    <meta property="og:title" content="வியாபாரம் (VIYABARAM CLOUD)" />
+    <meta property="og:description" content="GST Billing & Inventory Management Software by MCube Computers" />
+    <meta property="og:image" content="./splash.jpg" />
+    <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <title>வணிகம் (Vanigam) — GST Billing & Inventory</title>
+    <title>வியாபாரம் (VIYABARAM CLOUD) — GST Billing & Inventory Software</title>
+    <style>
+      #app-preloader {
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(ellipse at 50% 30%, #0c1a3a 0%, #060b18 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 999999;
+        font-family: 'Inter', sans-serif;
+        color: white;
+      }
+      .preloader-box {
+        width: 90%;
+        max-width: 680px;
+        background: rgba(15, 23, 42, 0.85);
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        border-radius: 18px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+        overflow: hidden;
+        text-align: center;
+      }
+      .preloader-img {
+        width: 100%;
+        display: block;
+        aspect-ratio: 16/9;
+        object-fit: contain;
+        background: #020617;
+      }
+      .preloader-footer {
+        padding: 12px 20px;
+        font-size: 11px;
+        color: #94a3b8;
+        display: flex;
+        justify-content: space-between;
+        background: rgba(10, 15, 30, 0.95);
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Instant preloader while JS bundles download -->
+      <div id="app-preloader">
+        <div class="preloader-box">
+          <img src="./splash.jpg" alt="வியாபாரம் (VIYABARAM CLOUD)" class="preloader-img" />
+          <div class="preloader-footer">
+            <span>Software Developed By: <strong style="color: #38bdf8;">MCube Computers</strong></span>
+            <span>License Rights: <strong style="color: #e2e8f0;">MCube Computers</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

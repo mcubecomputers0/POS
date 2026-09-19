@@ -74,23 +74,25 @@ export default function LoginPage() {
 
       <div style={{ width: '100%', maxWidth: 420, position: 'relative', zIndex: 1 }}>
         {/* Logo */}
-        <div style={{ textAlign: 'center', marginBottom: 'var(--space-8)' }}>
-          <div style={{
-            width: 64, height: 64,
-            background: 'linear-gradient(135deg, var(--brand-primary), var(--brand-secondary))',
-            borderRadius: 'var(--radius-2xl)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            margin: '0 auto var(--space-4)',
-            boxShadow: 'var(--shadow-glow)',
-            fontSize: 32,
-          }}>
-            ⚡
-          </div>
-          <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', fontWeight: 800, marginBottom: 4 }}>
-            வணிகம் (Vanigam)
+        <div style={{ textAlign: 'center', marginBottom: 'var(--space-6)' }}>
+          <img
+            src="./icon.png"
+            alt="வியாபாரம் (VIYABARAM CLOUD)"
+            style={{
+              width: 80,
+              height: 80,
+              borderRadius: 'var(--radius-2xl)',
+              margin: '0 auto var(--space-3)',
+              boxShadow: '0 8px 24px rgba(26, 86, 219, 0.35)',
+              display: 'block',
+              objectFit: 'cover',
+            }}
+          />
+          <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '1.65rem', fontWeight: 800, marginBottom: 2 }}>
+            வியாபாரம் (VIYABARAM CLOUD)
           </h1>
-          <p style={{ color: 'var(--color-text-muted)', fontSize: 'var(--text-sm)' }}>
-            Sign in to your account
+          <p style={{ color: 'var(--color-text-muted)', fontSize: 'var(--text-xs)', fontWeight: 500 }}>
+            GST Billing & Inventory Management Software
           </p>
         </div>
 
@@ -222,6 +224,18 @@ export default function LoginPage() {
           Don't have an account?{' '}
           <Link to="/register" style={{ color: 'var(--brand-primary)', fontWeight: 600 }}>Create free account</Link>
         </p>
+
+        {/* Software credits & license rights */}
+        <div style={{
+          textAlign: 'center',
+          marginTop: 'var(--space-6)',
+          fontSize: 'var(--text-xs)',
+          color: 'var(--color-text-dim)',
+          lineHeight: 1.6,
+        }}>
+          <div>Software Developed By: <strong style={{ color: 'var(--color-text)' }}>MCube Computers</strong></div>
+          <div>License Rights: <strong style={{ color: 'var(--color-text)' }}>MCube Computers</strong></div>
+        </div>
 
         <ServerConfigModal isOpen={showServerModal} onClose={() => setShowServerModal(false)} />
       </div>

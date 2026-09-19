@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.cloudgst.pos',
-  appName: 'வணிகம் (Vanigam)',
+  appId: 'com.viyabaram.cloud',
+  appName: 'வியாபாரம் (VIYABARAM CLOUD)',
   webDir: 'dist',
   server: {
     androidScheme: 'http',

@@ -35,7 +35,7 @@ export default function RegisterPage() {
       const result = await authApi.register({ name: data.name, email: data.email, phone: data.phone, password: data.password });
       const { user, accessToken, refreshToken } = result.data;
       setAuth({ user, accessToken, refreshToken, companies: [] });
-      toast.success(`Welcome to வணிகம் (Vanigam), ${user.name}!`);
+      toast.success(`Welcome to வியாபாரம் (VIYABARAM CLOUD), ${user.name}!`);
       navigate('/create-company');
     } catch (error: any) {
       toast.error(error.response?.data?.message || 'Registration failed');
@@ -46,10 +46,26 @@ export default function RegisterPage() {
     <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-bg)', padding: 'var(--space-4)', position: 'relative', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(124, 58, 237, 0.25), transparent)', pointerEvents: 'none' }} />
       <div style={{ width: '100%', maxWidth: 460, position: 'relative', zIndex: 1 }}>
-        <div style={{ textAlign: 'center', marginBottom: 'var(--space-8)' }}>
-          <div style={{ width: 64, height: 64, background: 'linear-gradient(135deg, var(--brand-primary), var(--brand-secondary))', borderRadius: 'var(--radius-2xl)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto var(--space-4)', boxShadow: 'var(--shadow-glow)', fontSize: 32 }}>⚡</div>
-          <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', fontWeight: 800, marginBottom: 4 }}>Create your account</h1>
-          <p style={{ color: 'var(--color-text-muted)', fontSize: 'var(--text-sm)' }}>Start with a 30-day free trial — no credit card required</p>
+        <div style={{ textAlign: 'center', marginBottom: 'var(--space-6)' }}>
+          <img
+            src="./icon.png"
+            alt="வியாபாரம் (VIYABARAM CLOUD)"
+            style={{
+              width: 72,
+              height: 72,
+              borderRadius: 'var(--radius-2xl)',
+              margin: '0 auto var(--space-3)',
+              boxShadow: '0 8px 24px rgba(26, 86, 219, 0.35)',
+              display: 'block',
+              objectFit: 'cover',
+            }}
+          />
+          <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '1.65rem', fontWeight: 800, marginBottom: 2 }}>
+            வியாபாரம் (VIYABARAM CLOUD)
+          </h1>
+          <p style={{ color: 'var(--color-text-muted)', fontSize: 'var(--text-xs)' }}>
+            Start your 30-day free trial — GST Billing & Inventory Software
+          </p>
         </div>
 
         <div className="card" style={{ padding: 'var(--space-8)' }}>
@@ -103,6 +119,18 @@ export default function RegisterPage() {
         <p style={{ textAlign: 'center', marginTop: 'var(--space-4)', fontSize: 'var(--text-sm)', color: 'var(--color-text-muted)' }}>
           Already have an account?{' '}<Link to="/login" style={{ color: 'var(--brand-primary)', fontWeight: 600 }}>Sign in</Link>
         </p>
+
+        {/* Software credits & license rights */}
+        <div style={{
+          textAlign: 'center',
+          marginTop: 'var(--space-6)',
+          fontSize: 'var(--text-xs)',
+          color: 'var(--color-text-dim)',
+          lineHeight: 1.6,
+        }}>
+          <div>Software Developed By: <strong style={{ color: 'var(--color-text)' }}>MCube Computers</strong></div>
+          <div>License Rights: <strong style={{ color: 'var(--color-text)' }}>MCube Computers</strong></div>
+        </div>
       </div>
     </div>
   );

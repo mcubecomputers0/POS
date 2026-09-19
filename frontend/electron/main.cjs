@@ -11,8 +11,8 @@ function createWindow() {
     height: 800,
     minWidth: 1024,
     minHeight: 680,
-    title: 'வணிகம் (Vanigam) — POS & GST Billing',
-    icon: path.join(__dirname, '../public/favicon.ico'),
+    title: 'வியாபாரம் (VIYABARAM CLOUD) — GST Billing & Inventory Management',
+    icon: path.join(__dirname, '../public/icon.png'),
     autoHideMenuBar: false,
     backgroundColor: '#0f172a',
     webPreferences: {
@@ -65,17 +65,17 @@ function createWindow() {
       label: 'Help',
       submenu: [
         {
-          label: 'வணிகம் (Vanigam) v1.0.0',
+          label: 'வியாபாரம் (VIYABARAM CLOUD) v1.0.0',
           enabled: false,
         },
         {
-          label: 'About வணிகம் (Vanigam)',
+          label: 'About வியாபாரம் (VIYABARAM CLOUD)',
           click: () => {
             dialog.showMessageBox(mainWindow, {
               type: 'info',
-              title: 'About வணிகம் (Vanigam)',
-              message: 'வணிகம் (Vanigam) Desktop Application',
-              detail: 'Multi-tenant GST Billing, POS & Inventory Management for Windows.\nVersion 1.0.0',
+              title: 'About வியாபாரம் (VIYABARAM CLOUD)',
+              message: 'வியாபாரம் (VIYABARAM CLOUD)',
+              detail: 'GST Billing & Inventory Management Software\n\nSoftware Developed By: MCube Computers\nLicense Rights: MCube Computers\nVersion: 1.0.0',
             });
           },
         },
