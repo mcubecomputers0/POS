@@ -143,10 +143,10 @@ export default function ServerConfigModal({ isOpen, onClose }: Props) {
             <button
               type="button"
               className="btn btn-ghost btn-sm"
-              onClick={() => applyPreset('https://pos-1156.onrender.com')}
+              onClick={() => applyPreset('https://pos-4156.onrender.com')}
               style={{ fontSize: 10, padding: '2px 8px', height: 'auto', border: '1px solid #3b82f6', color: '#60a5fa' }}
             >
-              ☁ Cloud Render (pos-1156)
+              ☁ Cloud Render (pos-4156)
             </button>
             <button
               type="button"
