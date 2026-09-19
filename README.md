@@ -91,16 +91,12 @@ npm run dev
 
 ---
 
-## Demo Credentials
+## Default Admin Credentials
 
 | Role | Email | Password |
 |------|-------|----------|
-| **Demo User** (Company Owner) | `demo@cloudgstpro.com` | `Demo@1234` |
 | **Super Admin** | `superadmin@cloudgstpro.com` | `SuperAdmin@123` |
 
-**Demo Company:** Demo Sports Store  
-**GSTIN:** 29AADCD1234F1Z5 (Karnataka, Regular scheme)  
-**Demo data:** 6 products, 3 customers, 1 supplier
 
 ---
 

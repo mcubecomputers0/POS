@@ -205,39 +205,16 @@ export default function LoginPage() {
             </div>
           </form>
 
-          <div style={{ marginTop: 'var(--space-6)', textAlign: 'center' }}>
-            <div style={{ height: 1, background: 'var(--color-border)', position: 'relative', marginBottom: 'var(--space-4)' }}>
-              <span style={{ position: 'absolute', top: -10, left: '50%', transform: 'translateX(-50%)', background: 'var(--color-surface)', padding: '0 var(--space-3)', fontSize: 'var(--text-xs)', color: 'var(--color-text-dim)' }}>
-                OR
-              </span>
-            </div>
-
-            {/* Demo credentials box */}
-            <div style={{
-              background: 'var(--color-bg)',
-              border: '1px solid var(--color-border)',
-              borderRadius: 'var(--radius-lg)',
-              padding: 'var(--space-3)',
-              fontSize: 'var(--text-xs)',
-              color: 'var(--color-text-muted)',
-              textAlign: 'left',
-            }}>
-              <div style={{ fontWeight: 600, marginBottom: 4, color: 'var(--color-text)' }}>🎯 Demo Account</div>
-              <div>Email: <code style={{ color: 'var(--brand-primary)' }}>demo@cloudgstpro.com</code></div>
-              <div>Password: <code style={{ color: 'var(--brand-primary)' }}>Demo@1234</code></div>
-            </div>
-
-            {/* Server / Cloud config trigger */}
-            <div style={{ marginTop: 12 }}>
-              <button
-                type="button"
-                className="btn btn-ghost btn-sm"
-                onClick={() => setShowServerModal(true)}
-                style={{ fontSize: 11, color: 'var(--color-text-dim)', gap: 5 }}
-              >
-                <Server size={12} /> Cloud Server Settings
-              </button>
-            </div>
+          {/* Server / Cloud config trigger */}
+          <div style={{ marginTop: 'var(--space-4)', textAlign: 'center' }}>
+            <button
+              type="button"
+              className="btn btn-ghost btn-sm"
+              onClick={() => setShowServerModal(true)}
+              style={{ fontSize: 11, color: 'var(--color-text-dim)', gap: 5 }}
+            >
+              <Server size={12} /> Cloud Server Settings
+            </button>
           </div>
         </div>
 
