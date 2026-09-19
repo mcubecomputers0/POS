@@ -91,6 +91,18 @@ app.use(
 // ─── Request Logging ─────────────────────────────────────────
 app.use(requestLogger);
 
+// ─── Welcome / Root Route ────────────────────────────────────
+app.get('/', (_req, res) => {
+  res.json({
+    success: true,
+    message: '🚀 CloudGST Pro API is running live on the cloud!',
+    version: '1.0.0',
+    status: 'online',
+    health: '/health',
+    endpoints: '/api/v1',
+  });
+});
+
 // ─── Health Check ────────────────────────────────────────────
 app.get('/health', (_req, res) => {
   res.json({ 
