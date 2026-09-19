@@ -87,7 +87,7 @@ export default function LoginPage() {
             ⚡
           </div>
           <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', fontWeight: 800, marginBottom: 4 }}>
-            CloudGST Pro
+            வணிகம் (Vanigam)
           </h1>
           <p style={{ color: 'var(--color-text-muted)', fontSize: 'var(--text-sm)' }}>
             Sign in to your account

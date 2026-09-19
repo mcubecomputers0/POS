@@ -35,7 +35,7 @@ export default function RegisterPage() {
       const result = await authApi.register({ name: data.name, email: data.email, phone: data.phone, password: data.password });
       const { user, accessToken, refreshToken } = result.data;
       setAuth({ user, accessToken, refreshToken, companies: [] });
-      toast.success(`Welcome to CloudGST Pro, ${user.name}!`);
+      toast.success(`Welcome to வணிகம் (Vanigam), ${user.name}!`);
       navigate('/create-company');
     } catch (error: any) {
       toast.error(error.response?.data?.message || 'Registration failed');

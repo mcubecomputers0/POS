@@ -1,7 +1,7 @@
 {
-  "appId": "com.cloudgst.pos",
-  "productName": "CloudGST Pro",
-  "copyright": "Copyright © 2026 CloudGST Pro",
+  "appId": "com.vanigam.pos",
+  "productName": "வணிகம் (Vanigam)",
+  "copyright": "Copyright © 2026 வணிகம் (Vanigam)",
   "directories": {
     "output": "release"
   },
@@ -28,6 +28,6 @@
     "allowToChangeInstallationDirectory": true,
     "createDesktopShortcut": true,
     "createStartMenuShortcut": true,
-    "shortcutName": "CloudGST Pro"
+    "shortcutName": "வணிகம் (Vanigam)"
   }
 }

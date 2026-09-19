@@ -11,8 +11,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
       manifest: {
-        name: 'CloudGST Pro',
-        short_name: 'CloudGST',
+        name: 'வணிகம் (Vanigam)',
+        short_name: 'வணிகம்',
         description: 'Multi-company GST billing, POS & inventory management',
         theme_color: '#1a56db',
         background_color: '#0f172a',

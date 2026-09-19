@@ -122,7 +122,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           <div className="sidebar-logo-icon">⚡</div>
           {!sidebarCollapsed && (
             <div>
-              <div className="sidebar-logo-text">CloudGST Pro</div>
+              <div className="sidebar-logo-text">வணிகம் (Vanigam)</div>
               <div style={{ fontSize: '10px', color: 'var(--color-text-dim)' }}>Billing & Inventory</div>
             </div>
           )}

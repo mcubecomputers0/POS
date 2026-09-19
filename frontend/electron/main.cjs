@@ -11,7 +11,7 @@ function createWindow() {
     height: 800,
     minWidth: 1024,
     minHeight: 680,
-    title: 'CloudGST Pro — POS & GST Billing',
+    title: 'வணிகம் (Vanigam) — POS & GST Billing',
     icon: path.join(__dirname, '../public/favicon.ico'),
     autoHideMenuBar: false,
     backgroundColor: '#0f172a',
@@ -65,16 +65,16 @@ function createWindow() {
       label: 'Help',
       submenu: [
         {
-          label: 'CloudGST Pro v1.0.0',
+          label: 'வணிகம் (Vanigam) v1.0.0',
           enabled: false,
         },
         {
-          label: 'About CloudGST Pro',
+          label: 'About வணிகம் (Vanigam)',
           click: () => {
             dialog.showMessageBox(mainWindow, {
               type: 'info',
-              title: 'About CloudGST Pro',
-              message: 'CloudGST Pro Desktop Application',
+              title: 'About வணிகம் (Vanigam)',
+              message: 'வணிகம் (Vanigam) Desktop Application',
               detail: 'Multi-tenant GST Billing, POS & Inventory Management for Windows.\nVersion 1.0.0',
             });
           },

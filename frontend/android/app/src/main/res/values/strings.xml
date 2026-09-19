@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">CloudGST Pro</string>
-    <string name="title_activity_main">CloudGST Pro</string>
+    <string name="app_name">வணிகம் (Vanigam)</string>
+    <string name="title_activity_main">வணிகம் (Vanigam)</string>
     <string name="package_name">com.cloudgst.pos</string>
     <string name="custom_url_scheme">com.cloudgst.pos</string>
 </resources>
