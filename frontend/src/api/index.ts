@@ -9,7 +9,7 @@ export const getStoredServerUrl = (): string => {
   if (envUrl && envUrl.trim()) {
     return envUrl.trim().replace(/\/+$/, '');
   }
-  return '';
+  return 'https://pos-1156.onrender.com';
 };
 
 export const getApiBaseUrl = (): string => {

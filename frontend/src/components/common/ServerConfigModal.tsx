@@ -143,6 +143,22 @@ export default function ServerConfigModal({ isOpen, onClose }: Props) {
             <button
               type="button"
               className="btn btn-ghost btn-sm"
+              onClick={() => applyPreset('https://pos-1156.onrender.com')}
+              style={{ fontSize: 10, padding: '2px 8px', height: 'auto', border: '1px solid #3b82f6', color: '#60a5fa' }}
+            >
+              ☁ Cloud Render (pos-1156)
+            </button>
+            <button
+              type="button"
+              className="btn btn-ghost btn-sm"
+              onClick={() => applyPreset('https://pos-m49l.onrender.com')}
+              style={{ fontSize: 10, padding: '2px 8px', height: 'auto', border: '1px solid var(--color-border)' }}
+            >
+              ☁ Cloud Render (pos-m49l)
+            </button>
+            <button
+              type="button"
+              className="btn btn-ghost btn-sm"
               onClick={() => applyPreset('http://192.168.1.28:4000')}
               style={{ fontSize: 10, padding: '2px 8px', height: 'auto', border: '1px solid var(--color-border)' }}
             >
@@ -154,7 +170,7 @@ export default function ServerConfigModal({ isOpen, onClose }: Props) {
               onClick={() => applyPreset('http://localhost:4000')}
               style={{ fontSize: 10, padding: '2px 8px', height: 'auto', border: '1px solid var(--color-border)' }}
             >
-              💻 Local (localhost:4000)
+              💻 Localhost (4000)
             </button>
           </div>
           <div style={{ fontSize: 11, color: 'var(--color-text-muted)', marginTop: 8, background: 'rgba(255,255,255,0.03)', padding: 8, borderRadius: 6 }}>
